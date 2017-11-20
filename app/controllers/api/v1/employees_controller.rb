@@ -33,6 +33,11 @@ class Api::V1::EmployeesController < ApplicationController
 		render "api/v1/employees/show"
 	end
 
+	def autocomplete
+		@employees = Employee.filter_by_term(params[:term])
+		render "api/v1/employees/index"
+	end
+
 	private
 	def set_employee
 		@employee = Employee.find(params[:id])

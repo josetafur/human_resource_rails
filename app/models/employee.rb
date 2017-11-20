@@ -10,6 +10,10 @@ class Employee < ApplicationRecord
 	def self.lasted
 		order(id: :desc)
 	end
+
+	def self.filter_by_term(term)
+		where("name LIKE ?","%#{term}%")
+	end
 	
 	########## METODOS DE PRIVADOS #####################
 	private

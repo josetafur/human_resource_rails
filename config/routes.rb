@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {:format => :json} do
   	namespace :v1 do
-  		resources :employees
+  		resources :employees do
+  			collection do
+  				get 'autocomplete'
+  			end
+  		end
   	end
   end
 end
