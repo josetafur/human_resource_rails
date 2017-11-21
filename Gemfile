@@ -25,6 +25,7 @@ gem 'puma', '~> 3.7'
 # gem 'rack-cors'
 gem 'jbuilder', '~> 2.0'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development do
 	gem 'sqlite3'

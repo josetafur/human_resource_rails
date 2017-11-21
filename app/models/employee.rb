@@ -2,6 +2,7 @@ class Employee < ApplicationRecord
 	# enum :state, [:enable,:disable]
 
 	validates :name, :last_name, :job_position, :team, presence: true
+	validates :phone, numericality: {only_integer: true}, :allow_blank => true
 	
 	before_validation :set_defaults, on: :create
 
