@@ -3,6 +3,9 @@ class Api::V1::EmployeesController < ApplicationController
 
 	def index
 		@employees = Employee.lasted
+		if params[:skills].present?
+			@employees = @employees.filter_by_skills(params[:skills])
+		end
 		render "api/v1/employees/index"
 	end
 
