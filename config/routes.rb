@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   			collection do
   				get 'autocomplete'
   			end
+        resources :employee_skills, only: [:index, :create]
   		end
+      resources :employee_skills, only: [:destroy]
   	end
   end
 end

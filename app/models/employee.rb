@@ -18,7 +18,7 @@ class Employee < ApplicationRecord
 	end
 
 	def self.filter_by_skills(skills)
-		joins(:employee_skills).where("employee_skills.skill_id IN (?)",skills).group("employees.id")
+		joins(:employee_skills).where("employee_skills.skill_id IN (?)",skills).group("employees.id").having("count(employee_skills.id) >= ?",skills.length)
 	end
 
 	########## METODOS DE PRIVADOS #####################

@@ -1,0 +1,1 @@
+json.(@employee_skill, :id, :skill_id, :employee_id, :created_at)
