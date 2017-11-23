@@ -5,7 +5,6 @@ class Api::V1::EmployeesController < ApplicationController
 		@employees = Employee.lasted
 		if params[:skills].present?
 			@employees = @employees.filter_by_skills(params[:skills])
-			puts @employees.inspect
 		end
 		render "api/v1/employees/index"
 	end

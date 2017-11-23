@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         resources :employee_skills, only: [:index, :create]
   		end
       resources :employee_skills, only: [:destroy]
+      resources :skills, only: [:index, :create, :update, :destroy]
   	end
   end
 end
